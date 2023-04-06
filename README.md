@@ -12,9 +12,16 @@
 
 The recently proposed open-world object and open-set detection have achieved a breakthrough in finding never-seen-before objects and distinguishing them from known ones. However, their studies on knowledge transfer from known classes to unknown ones are not deep enough, resulting in the scanty capability for detecting unknowns hidden in the background. In this paper, we propose the unknown sniffer (UnSniffer) to find both unknown and known objects. Firstly, the generalized object confidence (GOC) score is introduced, which only uses known samples for supervision and avoids improper suppression of unknowns in the background. Significantly, such confidence score learned from known objects can be generalized to unknown ones. Additionally, we propose a negative energy suppression loss to further suppress the non-object samples in the background. Next, the best box of each unknown is hard to obtain during inference due to lacking their semantic information in training. To solve this issue, we introduce a graph-based determination scheme to replace hand-designed non-maximum suppression (NMS) post-processing. Finally, we present the Unknown Object Detection Benchmark, the first publicly benchmark that encompasses precision evaluation for unknown detection to our knowledge. Experiments show that our method is far better than the existing state-of-the-art methods.
 
+[//]: # (![]&#40;https://xuefengbupt.github.io/project_page/img/unsniffer_demo1.gif&#41;)
+
+[//]: # (![]&#40;https://xuefengbupt.github.io/project_page/img/unsniffer_demo2.gif&#41;)
+
 <div id="demo" style="display: flex; justify-content: center; margin-bottom: 20px;">
-<img src="https://xuefengbupt.github.io/project_page/img/unsniffer_demo1.gif" width="305" style="margin-right: 30px;">
-<img src="https://xuefengbupt.github.io/project_page/img/unsniffer_demo2.gif" width="400" style="margin-left: 30px;">
+
+<img src="unsniffer_demo1.gif" width="305" style="margin-right: 30px;">
+
+<img src="unsniffer_demo2.gif" width="400" style="margin-left: 30px;">
+
 </div>
 
 # Requirements
