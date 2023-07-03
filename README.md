@@ -39,6 +39,8 @@ The datasets can be downloaded using this [link](https://drive.google.com/drive/
 
 Please put the corresponding json files in Google Cloud Disk into ./anntoations
 
+Please download the JPEGImages data from the [link](https://drive.google.com/file/d/1n9C4CiBURMSCZy2LStBQTzR17rD_a67e/view?usp=sharing) provided by [VOS](https://github.com/deeplearning-wisc/vos).
+
 The VOC dataset folder should have the following structure:
 <br>
 
@@ -68,7 +70,7 @@ The COCO dataset folder should have the following structure:
 
 # Training
 ```bash
-python train_net.py --dataset-dir /data/VOC_0712_converted --num-gpus 2 --config-file VOC-Detection/faster-rcnn/UnSniffer.yaml --random-seed 0 --resume
+python train_net.py --dataset-dir VOC_DATASET_ROOT --num-gpus 2 --config-file VOC-Detection/faster-rcnn/UnSniffer.yaml --random-seed 0 --resume
 ```
 The pretrained models for Pascal-VOC can be downloaded from [UnSniffer](https://drive.google.com/file/d/1kp60e6nh0iIOPd41f4JI6Yo9r_r7MqRo/view?usp=sharing). Please put the model in UnSniffer/detection/data/VOC-Detection/faster-rcnn/UnSniffer/random_seed_0/.
 
@@ -80,7 +82,7 @@ sh pretest.sh
 
 # Evaluation on the VOC
 ```bash
-python apply_net.py --dataset-dir /data/VOC_0712_converted/ --test-dataset voc_custom_val  --config-file VOC-Detection/faster-rcnn/UnSniffer.yaml --inference-config Inference/standard_nms.yaml --random-seed 0 --image-corruption-level 0 --visualize 0
+python apply_net.py --dataset-dir VOC_DATASET_ROOT --test-dataset voc_custom_val  --config-file VOC-Detection/faster-rcnn/UnSniffer.yaml --inference-config Inference/standard_nms.yaml --random-seed 0 --image-corruption-level 0 --visualize 0
 ```
 
 # Evaluation on the COCO-OOD
